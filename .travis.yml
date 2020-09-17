@@ -1,5 +1,10 @@
 language: c
 sudo: false
+
+arch:
+- amd64
+- arm64
+
 services:
 - docker
 addons:
