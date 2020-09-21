@@ -33,5 +33,6 @@ env:
 before_install:
 - travis/install-s2i.sh
 - export PATH="${PATH}:${HOME}/openresty/bin:${HOME}/openresty/luajit/bin:${HOME}/openresty/nginx/sbin:${HOME}/bin:${HOME}/.luarocks/bin"
+- npm i -g yarn
 script:
 - make test-doc
