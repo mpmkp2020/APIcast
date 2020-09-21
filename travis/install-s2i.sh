@@ -15,8 +15,8 @@ install_s2i(){
   #tar -xzf source-to-image.tar.gz -C "${PREFIX}/"
   #rm -rf source-to-image.tar.gz
   wget https://golang.org/dl/go1.15.2.linux-arm64.tar.gz
-  tar -xvzf go1.15.2.linux-arm64.tar.gz 
-  tar -C /usr/local -xvzf  go1.15.2.linux-arm64.tar.gz
+  #tar -xvzf go1.15.2.linux-arm64.tar.gz 
+  sudo tar -C /usr/local -xvzf  go1.15.2.linux-arm64.tar.gz
   export PATH=/usr/local/go/bin:$PATH
   git clone https://github.com/mpmkp2020/source-to-image
   cd source-to-image
