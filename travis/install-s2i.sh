@@ -21,7 +21,7 @@ install_s2i(){
   git clone https://github.com/mpmkp2020/source-to-image
   cd source-to-image
   hack/build-go.sh
-  cp -r _output/local/bin/linux/amd64/* "${PREFIX}"
+  cp -r _output/local/bin/linux/arm64/* "${PREFIX}"
 }
 
 if [ ! -f "${PREFIX}/s2i" ]; then
