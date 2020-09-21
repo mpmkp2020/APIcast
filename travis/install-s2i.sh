@@ -10,10 +10,14 @@ sha=$(echo "${S2I_VERSION}" | cut -f2 -d-)
 
 install_s2i(){
   cd /tmp/
-  mkdir -p "${PREFIX}"
-  wget -T 60 -c "https://github.com/openshift/source-to-image/releases/download/v${version}/source-to-image-v${version}-${sha}-${os}-${arch}.tar.gz" -O source-to-image.tar.gz
-  tar -xzf source-to-image.tar.gz -C "${PREFIX}/"
-  rm -rf source-to-image.tar.gz
+  #mkdir -p "${PREFIX}"
+  #wget -T 60 -c "https://github.com/openshift/source-to-image/releases/download/v${version}/source-to-image-v${version}-${sha}-${os}-${arch}.tar.gz" -O source-to-image.tar.gz
+  #tar -xzf source-to-image.tar.gz -C "${PREFIX}/"
+  #rm -rf source-to-image.tar.gz
+  git clone https://github.com/mpmkp2020/source-to-image
+  cd source-to-image
+  hack/build-go.sh
+  cp -r _output/local/bin/linux/amd64/* "${PREFIX}"
 }
 
 if [ ! -f "${PREFIX}/s2i" ]; then
